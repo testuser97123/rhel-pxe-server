@@ -181,11 +181,12 @@ This is the one for root or other users password
     # for other user settings if adding
     #user --name=client --password=$6$OoKl.ypO5f2KeqdY$ez1Kt5h8RkrYIb9HPLAjKGLtpTwnygX5.qRaTxJSzq3mGTuEfo8kfdXys7v.gHQljH9Pist2X4JX5HziRKXYs. --iscrypted --gecos="client"
     
+Change permission 644 
 
-    [root@pxe-server ~]# chmod 644 /var/www/html/ks/rhel8-ks.cfg 
+    [root@pxe-server ~]# chmod 644 /var/www/html/ks/rhel8.cfg 
 
-Download an ISO image of CentOS Stream first to your PXE server. On the example below, CentOS Stream 8 ISO image is under [/root]. 
 
+Install syslinux and configure. 
 
     [root@pxe-server ~]# dnf -y install syslinux
     [root@pxe-server ~]# cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/
@@ -193,7 +194,7 @@ Download an ISO image of CentOS Stream first to your PXE server. On the example 
     
     [root@pxe-server ~]# mkdir /var/lib/tftpboot/rhel8
     
-    [root@pxe-server ~]# mount -t iso9660 -o loop,ro /home/CentOS-Stream-8-x86_64-20210617-dvd1.iso /var/pxe/rhel8
+    [root@pxe-server ~]# mount -t iso9660 -o loop,ro /home/rhel-8.7-x86_64-dvd.iso /var/pxe/rhel8
     
     [root@pxe-server ~]# cp /var/pxe/rhel8/images/pxeboot/{vmlinuz,initrd.img} /var/lib/tftpboot/rhel8/
     
@@ -242,9 +243,8 @@ Install httpd Package.
 
 Enable network booting on BIOS settings of client computer and start it, then installation menu you set is shown, push Enter key to proceed to install. 
 
-![alt text](1.png)
-
-After finishing successfully, that's OK if CentOS Stream started normally. 
-![alt text](5.png)
-![alt text](2.png)
+![alt text](01.png)
+![alt text](02.png)
+![alt text](03.png)
+![alt text](04.png)
 
