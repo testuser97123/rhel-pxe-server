@@ -1,4 +1,4 @@
-# Install CentOS Stream to client computers from a PXE Server via network.
+# Install REDHAT LINUX to client computers from a PXE Server via network.
 
 
 # Objective
